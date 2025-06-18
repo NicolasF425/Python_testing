@@ -1,12 +1,12 @@
 click==7.1.2
 colorama==0.4.6
-Flask==1.1.2
+Flask==2.2.5
 iniconfig==2.1.0
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==3.1.6
 MarkupSafe==1.1.1
 packaging==25.0
 pluggy==1.6.0
 Pygments==2.19.1
 pytest==8.4.0
-Werkzeug==1.0.1
+Werkzeug==3.0.6
