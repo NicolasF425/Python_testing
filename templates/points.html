@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points display|| GUDLFT</title>
+</head>
+<body>
+    {% if clubs %}
+        <table class="clubs-table">
+            <thead>
+                <tr>
+                    <th>Nom du Club</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for club in clubs %}
+                <tr>
+                    <td>{{ club.name }}</td>
+                    <td class="points">{{ club.points }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="no-clubs">No club found.</p>
+    {% endif %}
+</body>
+</html>
