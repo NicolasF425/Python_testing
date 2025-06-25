@@ -11,3 +11,11 @@ def loadCompetitions():
     with open('competitions.json') as comps:
         listOfCompetitions = json.load(comps)['competitions']
         return listOfCompetitions
+
+
+def checkMailExist(mail):
+    clubs = loadClubs()
+    for club in clubs:
+        if club['email'] == mail:
+            return True
+    return False

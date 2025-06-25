@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
-from utilities import loadClubs, loadCompetitions
+from utilities import loadClubs, loadCompetitions, checkMailExist
 
 
 app = Flask(__name__)
@@ -16,8 +16,11 @@ def index():
 
 @app.route('/showSummary', methods=['POST'])
 def showSummary():
-    club = [club for club in clubs if club['email'] == request.form['email']][0]
-    return render_template('welcome.html', club=club, competitions=competitions)
+    if checkMailExist(request.form['email']):
+        club = [club for club in clubs if club['email'] == request.form['email']][0]
+        return render_template('welcome.html', club=club, competitions=competitions)
+    else:
+        return render_template('index.html')
 
 
 @app.route('/book/<competition>/<club>')
