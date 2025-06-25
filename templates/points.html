@@ -1,15 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
     <title>Points display|| GUDLFT</title>
 </head>
 <body>
     {% if clubs %}
-        <table class="clubs-table">
+        <table>
+            <caption>
+                Points per club
+            </caption>
             <thead>
                 <tr>
-                    <th>Nom du Club</th>
+                    <th>Club name</th>
                     <th>Points</th>
                 </tr>
             </thead>
@@ -25,5 +30,7 @@
     {% else %}
         <p class="no-clubs">No club found.</p>
     {% endif %}
+
+    <p><a href="{{ url_for('index') }}" class="margins">Return</a></p>
 </body>
 </html>

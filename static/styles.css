@@ -1,0 +1,15 @@
+table,
+td {
+    border: 1px solid #333;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.margins {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
