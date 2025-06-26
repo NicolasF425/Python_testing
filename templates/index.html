@@ -13,6 +13,8 @@
         <button type="submit">Enter</button>
     </form>
 
+    {% include 'flash_manager.html' %}
+
     <a href="{{ url_for('display_clubs_points') }}">View points for all clubs</a>
 </body>
 </html>

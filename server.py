@@ -20,6 +20,7 @@ def showSummary():
         club = [club for club in clubs if club['email'] == request.form['email']][0]
         return render_template('welcome.html', club=club, competitions=competitions)
     else:
+        flash("Mail unknown, please retry")
         return render_template('index.html')
 
 
