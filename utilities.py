@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 
 def loadClubs():
@@ -18,4 +19,11 @@ def checkMailExist(mail):
     for club in clubs:
         if club['email'] == mail:
             return True
+    return False
+
+
+def checkDate(date_competition):
+    date_competition = datetime.strptime(date_competition, '%Y-%m-%d %H:%M:%S')
+    if date_competition < datetime.today():
+        return True
     return False
