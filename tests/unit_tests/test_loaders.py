@@ -37,6 +37,11 @@ def test_loadCompetitions():
             "name": "Fall Classic",
             "date": "2020-10-22 13:30:00",
             "numberOfPlaces": "13"
+        },
+        {
+            "name": "Open Classic",
+            "date": "2030-06-22 13:30:00",
+            "numberOfPlaces": "20"
         }
     ]
 

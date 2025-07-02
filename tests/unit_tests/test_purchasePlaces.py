@@ -13,7 +13,7 @@ def client():
 def test_purchasePlaces_success(client):
     rv = client.post("/purchasePlaces", data={
         'club': 'Simply Lift',
-        'competition': 'Spring Festival',
+        'competition': 'Open Classic',
         'places': '3'
     }, follow_redirects=True)
 
@@ -21,3 +21,16 @@ def test_purchasePlaces_success(client):
     data = rv.data.decode()
 
     assert "Great-booking complete!" in data
+
+
+def test_purchasePlaces_tooLate(client):
+    rv = client.post("/purchasePlaces", data={
+        'club': 'Simply Lift',
+        'competition': 'Spring Festival',
+        'places': '3'
+    }, follow_redirects=True)
+
+    assert rv.status_code == 200
+    data = rv.data.decode()
+
+    assert "Competition closed !" in data
