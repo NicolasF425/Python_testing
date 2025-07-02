@@ -22,8 +22,8 @@ def checkMailExist(mail):
     return False
 
 
-def checkDate(date_competition):
+def checkCompetionIsOpen(date_competition):
     date_competition = datetime.strptime(date_competition, '%Y-%m-%d %H:%M:%S')
-    if date_competition < datetime.today():
+    if date_competition > datetime.today():
         return True
     return False

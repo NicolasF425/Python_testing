@@ -10,12 +10,24 @@ def client():
         yield client
 
 
-def test_login(client):
-    rv = client.post("/", data={
+def test_login_KO(client):
+    rv = client.post("/showSummary", data={
+        'email': 'toto@false.com'
+    }, follow_redirects=True)
+
+    assert rv.status_code == 200
+    data = rv.data.decode()
+
+    assert "Mail unknown, please retry" in data
+
+
+def test_login_OK(client):
+    rv = client.post("/showSummary", data={
         'email': 'john@simplylift.co'
     }, follow_redirects=True)
 
     assert rv.status_code == 200
     data = rv.data.decode()
+    print(data)
 
     assert "Welcome" in data

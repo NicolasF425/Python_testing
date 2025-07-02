@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
-from utilities import loadClubs, loadCompetitions, checkMailExist
+from utilities import loadClubs, loadCompetitions, checkMailExist, checkCompetionIsOpen
 
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ competitions = loadCompetitions()
 clubs = loadClubs()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
@@ -21,7 +21,7 @@ def showSummary():
         return render_template('welcome.html', club=club, competitions=competitions)
     else:
         flash("Mail unknown, please retry")
-        return render_template('index.html')
+        return redirect(url_for('index'))
 
 
 @app.route('/book/<competition>/<club>')
@@ -45,19 +45,22 @@ def purchasePlaces():
     club = [c for c in clubs if c['name'] == request.form['club']][0]
     placesRequired = int(request.form['places'])
 
-    if placesRequired > int(club['points']):
-        flash('Not enough points !')
-        points_ok = False
-    if placesRequired > 12:
-        flash('12 places maximum !')
-        max_places_ok = False
-    if (int(competition['numberOfPlaces'])-placesRequired) < 0:
-        flash('You cant reserve that much places !')
-        enough_places = False
-    if (points_ok and max_places_ok and enough_places):
-        competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
-        club['points'] = int(club['points'])-placesRequired
-        flash('Great-booking complete!')
+    if not checkCompetionIsOpen(competition['date']):
+        flash('Competition closed !')
+    else:
+        if placesRequired > int(club['points']):
+            flash('Not enough points !')
+            points_ok = False
+        if placesRequired > 12:
+            flash('12 places maximum !')
+            max_places_ok = False
+        if (int(competition['numberOfPlaces'])-placesRequired) < 0:
+            flash('You cant reserve that much places !')
+            enough_places = False
+        if (points_ok and max_places_ok and enough_places):
+            competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
+            club['points'] = int(club['points'])-placesRequired
+            flash('Great-booking complete!')
 
     return render_template('welcome.html', club=club, competitions=competitions)
 
