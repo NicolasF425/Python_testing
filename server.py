@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
-from utilities import loadClubs, loadCompetitions, checkMailExist, checkCompetionIsOpen
+from utilities import load_clubs, load_competitions, check_mail_exist, check_competion_is_open
 
 
 app = Flask(__name__)
 app.secret_key = 'something_special'
 
-competitions = loadCompetitions()
-clubs = loadClubs()
+competitions = load_competitions()
+clubs = load_clubs()
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -16,7 +16,7 @@ def index():
 
 @app.route('/showSummary', methods=['POST'])
 def showSummary():
-    if checkMailExist(request.form['email']):
+    if check_mail_exist(request.form['email']):
         club = [club for club in clubs if club['email'] == request.form['email']][0]
         return render_template('welcome.html', club=club, competitions=competitions)
     else:
@@ -45,7 +45,7 @@ def purchasePlaces():
     club = [c for c in clubs if c['name'] == request.form['club']][0]
     placesRequired = int(request.form['places'])
 
-    if not checkCompetionIsOpen(competition['date']):
+    if not check_competion_is_open(competition['date']):
         flash('Competition closed !')
     else:
         if placesRequired > int(club['points']):

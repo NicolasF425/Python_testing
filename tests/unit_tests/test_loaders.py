@@ -1,4 +1,4 @@
-from utilities import loadClubs, loadCompetitions
+from utilities import load_clubs, load_competitions
 
 
 def test_loadClubs():
@@ -20,7 +20,7 @@ def test_loadClubs():
         }
     ]
 
-    loaded_clubs = loadClubs()
+    loaded_clubs = load_clubs()
 
     assert clubs == loaded_clubs
 
@@ -45,6 +45,6 @@ def test_loadCompetitions():
         }
     ]
 
-    loaded_competitions = loadCompetitions()
+    loaded_competitions = load_competitions()
 
     assert competitions == loaded_competitions

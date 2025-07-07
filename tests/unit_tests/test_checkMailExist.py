@@ -1,15 +1,15 @@
-from utilities import checkMailExist
+from utilities import check_mail_exist
 
 
 def test_checkMailExist_OK():
     test_mail = "john@simplylift.co"
-    result = checkMailExist(test_mail)
+    result = check_mail_exist(test_mail)
 
     assert result
 
 
 def test_checkMailExist_KO():
     test_mail = "toto@toto.com"
-    result = checkMailExist(test_mail)
+    result = check_mail_exist(test_mail)
 
     assert result is not True

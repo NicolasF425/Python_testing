@@ -28,6 +28,5 @@ def test_login_OK(client):
 
     assert rv.status_code == 200
     data = rv.data.decode()
-    print(data)
 
     assert "Welcome" in data
