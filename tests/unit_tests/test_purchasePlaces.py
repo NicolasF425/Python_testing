@@ -23,6 +23,21 @@ def test_purchasePlaces_success(client):
     assert "Great-booking complete!" in data
 
 
+def test_purchasePlaces_allErrors(client):
+    rv = client.post("/purchasePlaces", data={
+        'club': 'Simply Lift',
+        'competition': 'Open Classic',
+        'places': '21'
+    }, follow_redirects=True)
+
+    assert rv.status_code == 200
+    data = rv.data.decode()
+
+    assert "Not enough points !" in data
+    assert "12 places maximum !" in data
+    assert "You cant reserve that much places !" in data
+
+
 def test_purchasePlaces_tooLate(client):
     rv = client.post("/purchasePlaces", data={
         'club': 'Simply Lift',
