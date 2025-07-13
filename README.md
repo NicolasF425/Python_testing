@@ -37,13 +37,40 @@
 
 4. Current Setup
 
-    The app is powered by [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.htm). This is to get around having a DB until we actually need one. The main ones are:
+    The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.htm). This is to get around having a DB until we actually need one. The main ones are:
      
     * competitions.json - list of competitions
     * clubs.json - list of clubs with relevant information. You can look here to see what email addresses the app will accept for login.
 
 5. Testing
 
+    In project directory :
+
     Execute pytest in project directory to lauch the unit test and integration tests
+
+    Execute pytest --cov=. to view test coverage
+
+    Performance tests : 
+    
+    In a terminal, lauch the application :
+    
+    set FLASK_APP=server.py
+
+    flask run
+
+    then in another terminal
+
+    execute locust -f tests/performance_tests/locustfile.py then ctrl + click on the link  http://localhost:8089
+
+    In the navigator enter the following parameters : 
+
+    6
+
+    6
+
+    127.0.0.1:5000
+    
+        
+
 
 
