@@ -53,6 +53,8 @@ set FLASK_APP=server.py
 
 flask run
 
+Ctrl + click on the link  http://127.0.0.1:5000
+
 **Run unit and integration tests**
 
 Execute pytest in project directory to lauch the unit test and integration tests
@@ -63,7 +65,9 @@ Execute pytest --cov=. to view test coverage
 
 In another terminal
 
-execute locust -f tests/performance_tests/locustfile.py then ctrl + click on the link  http://localhost:8089
+execute locust -f tests/performance_tests/locustfile.py
+
+ctrl + click on the link  http://localhost:8089
 
 In the navigator enter the following parameters : 
 
