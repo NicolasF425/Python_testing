@@ -24,7 +24,7 @@ Before you begin, please ensure you have this installed globally.
 
 ## 3. Installation
 
-- After cloning, change into the directory and type virtualenv venv This will then set up a a virtual python environment within that directory.
+- After cloning, change into the directory and type _virtualenv -m venv_ This will then set up a a virtual python environment within that directory.
 
 - Next, type source bin/activate (Linux) or venv/scripts/activate (Windows). You should see that your command prompt has changed to the name of the folder. This means that you can install packages in here without affecting affecting files outside. To deactivate, type deactivate in place of activate in the command line.
 
