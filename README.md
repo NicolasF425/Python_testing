@@ -64,11 +64,11 @@
 
     In the navigator enter the following parameters : 
 
-    6
+    number of users : 6
 
-    6
+    ramp up : 6
 
-    127.0.0.1:5000
+    host : 127.0.0.1:5000
     
         
 
