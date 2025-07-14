@@ -43,7 +43,7 @@
 
 ## 5. Use and Testing
 
-    **For all actions, be in project directory.**
+    For all actions, be in project directory.
 
     In a terminal, lauch the application :
     
