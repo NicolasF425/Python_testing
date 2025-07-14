@@ -1,11 +1,11 @@
 ### gudlift-registration
 
-1. Why
+## 1. Why
 
 
     This is a proof of concept (POC) project to show a light-weight version of our competition booking platform. The aim is the keep things as light as possible, and use feedback from the users to iterate.
 
-2. Getting Started
+## 2. Getting Started
 
     This project uses the following technologies:
 
@@ -23,7 +23,7 @@
         Before you begin, please ensure you have this installed globally. 
 
 
-3. Installation
+## 3. Installation
 
     - After cloning, change into the directory and type <code>virtualenv .</code>. This will then set up a a virtual python environment within that directory.
 
@@ -35,14 +35,14 @@
 
     - You should now be ready to test the application. In the directory, type either <code>flask run</code> or <code>python -m flask run</code>. The app should respond with an address you should be able to go to using your browser.
 
-4. Current Setup
+## 4. Current Setup
 
     The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.htm). This is to get around having a DB until we actually need one. The main ones are:
      
     * competitions.json - list of competitions
     * clubs.json - list of clubs with relevant information. You can look here to see what email addresses the app will accept for login.
 
-5. Testing
+## 5. Use and Testing
 
     In project directory :
 
