@@ -44,7 +44,7 @@
 
 ## 5. Use and Testing
 
-    _In project directory :_
+    For all actions, be in project directory.
 
     In a terminal, lauch the application :
     
@@ -56,11 +56,9 @@
 
     Execute pytest --cov=. to view test coverage
 
-    Performance tests : 
-    
-    
+    Performance tests :   
 
-    then in another terminal
+    In another terminal
 
     execute locust -f tests/performance_tests/locustfile.py then ctrl + click on the link  http://localhost:8089
 
