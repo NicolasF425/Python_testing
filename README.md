@@ -49,9 +49,7 @@ The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.h
 
 In a terminal, lauch the application :
 
-set FLASK_APP=server.py
-
-flask run
+flask --app server run
 
 Ctrl + click on the link  http://127.0.0.1:5000
 
