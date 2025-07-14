@@ -45,17 +45,21 @@ The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.h
 
 **For all actions, be in project directory.**
 
+**Runnig the application :**
+
 In a terminal, lauch the application :
 
 set FLASK_APP=server.py
 
 flask run
 
+**Run unit and integration tests**
+
 Execute pytest in project directory to lauch the unit test and integration tests
 
 Execute pytest --cov=. to view test coverage
 
-Performance tests :   
+**Performance tests :**
 
 In another terminal
 
