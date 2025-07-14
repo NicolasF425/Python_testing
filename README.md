@@ -44,7 +44,7 @@
 
 ## 5. Use and Testing
 
-    ** In project directory : **
+    _In project directory :_
 
     In a terminal, lauch the application :
     
