@@ -44,7 +44,7 @@
 
 ## 5. Use and Testing
 
-    <b> In project directory <b>:
+    ** In project directory : **
 
     In a terminal, lauch the application :
     
