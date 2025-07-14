@@ -2,7 +2,6 @@
 
 ## 1. Why
 
-
     This is a proof of concept (POC) project to show a light-weight version of our competition booking platform. The aim is the keep things as light as possible, and use feedback from the users to iterate.
 
 ## 2. Getting Started
