@@ -44,7 +44,13 @@
 
 ## 5. Use and Testing
 
-    # In project directory :
+    <b> In project directory <b>:
+
+    In a terminal, lauch the application :
+    
+    set FLASK_APP=server.py
+
+    flask run
 
     Execute pytest in project directory to lauch the unit test and integration tests
 
@@ -52,11 +58,7 @@
 
     Performance tests : 
     
-    In a terminal, lauch the application :
     
-    set FLASK_APP=server.py
-
-    flask run
 
     then in another terminal
 
