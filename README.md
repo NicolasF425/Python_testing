@@ -41,7 +41,7 @@ The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.h
 
 ## 5. Use and Testing
 
-**For all actions, be in project directory.**
+**For all actions, be in project directory and activate the virtual environnement**
 
 **Runnig the application :**
 
