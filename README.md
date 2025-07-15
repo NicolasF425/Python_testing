@@ -59,7 +59,7 @@ Execute pytest --cov=. to view test coverage
 
 **Performance tests :**
 
-In another terminal
+In another terminal, while the application is running :
 
 execute locust -f tests/performance_tests/locustfile.py
 
