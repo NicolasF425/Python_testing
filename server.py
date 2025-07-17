@@ -82,7 +82,7 @@ def purchasePlaces():
         max_booking = 12
 
     placesRequired = int(request.form['places'])
-    if placesRequired <= 0:
+    if placesRequired < 0:
         flash("You can't book a negative number of places !")
         return render_template('welcome.html', club=club, competitions=competitions)
 
