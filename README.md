@@ -47,21 +47,24 @@ The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.h
 
 In a terminal, lauch the application :
 
-flask --app server run
+_flask --app server run_
 
 Ctrl + click on the link  http://127.0.0.1:5000
 
 **Run unit and integration tests**
 
-Execute pytest in project directory to lauch the unit test and integration tests
+Execute _pytest_ in project directory to lauch the unit test and integration tests
 
-Execute pytest --cov=. to view test coverage
+Execute _pytest --cov=._ to view test coverage
+
+<img width="1886" height="932" alt="testsP11" src="https://github.com/user-attachments/assets/5b95b0ce-9d9c-46bd-bacb-9deb1a9186ea" />
+
 
 **Performance tests :**
 
 In another terminal, while the application is running :
 
-execute locust -f tests/performance_tests/locustfile.py
+execute _locust -f tests/performance_tests/locustfile.py_
 
 ctrl + click on the link  http://localhost:8089
 
