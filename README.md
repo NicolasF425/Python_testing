@@ -26,13 +26,11 @@ Before you begin, please ensure you have this installed globally.
 
 - After cloning, change into the directory and type _virtualenv -m venv_ This will then set up a a virtual python environment within that directory.
 
-- Next, type source bin/activate (Linux) or venv/scripts/activate (Windows). You should see that your command prompt has changed to the name of the folder. This means that you can install packages in here without affecting affecting files outside. To deactivate, type deactivate in place of activate in the command line.
+- Next, type source bin/activate (Linux) or venv\scripts\activate (Windows). You should see that your command prompt has changed to the name of the folder. This means that you can install packages in here without affecting affecting files outside. To deactivate, type deactivate in place of activate in the command line.
 
-- Rather than hunting around for the packages you need, you can install in one step. Type pip install -r requirements.txt. This will install all the packages listed in the respective file. If you install a package, make sure others know by updating the requirements.txt file. An easy way to do this is pip freeze > requirements.txt
+- Rather than hunting around for the packages you need, you can install in one step. Type _pip install -r requirements.txt_. This will install all the packages listed in the respective file. If you install a package, make sure others know by updating the requirements.txt file. An easy way to do this is pip freeze > requirements.txt
 
 - Flask requires that you set an environmental variable to the python file. However you do that, you'll want to set the file to be <code>server.py</code>. Check [here](https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application) for more details
-
-- You should now be ready to test the application. In the directory, type either <code>flask run</code> or <code>python -m flask run</code>. The app should respond with an address you should be able to go to using your browser.
 
 ## 4. Current Setup
 
@@ -43,7 +41,7 @@ The app uses [JSON files](https://www.tutorialspoint.com/json/json_quick_guide.h
 
 ## 5. Use and Testing
 
-**For all actions, be in project directory.**
+**For all actions, be in project directory and activate the virtual environnement**
 
 **Runnig the application :**
 
@@ -61,7 +59,7 @@ Execute pytest --cov=. to view test coverage
 
 **Performance tests :**
 
-In another terminal
+In another terminal, while the application is running :
 
 execute locust -f tests/performance_tests/locustfile.py
 
@@ -76,6 +74,3 @@ ramp up : 6
 host : 127.0.0.1:5000
     
         
-
-
-
