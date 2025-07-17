@@ -25,9 +25,9 @@ def test_purchasePlaces_success(client):
 
 def test_purchasePlaces_allErrors(client):
     rv = client.post("/purchasePlaces", data={
-        'club': 'Simply Lift',
+        'club': 'Iron Temple',
         'competition': 'Open Classic',
-        'places': '21'
+        'places': '13'
     }, follow_redirects=True)
 
     assert rv.status_code == 200

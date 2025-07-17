@@ -13,7 +13,12 @@
         {
             "name": "Open Classic",
             "date": "2030-06-22 13:30:00",
-            "numberOfPlaces": "20"
+            "numberOfPlaces": "11"
+        },
+        {
+            "name": "Summer Games",
+            "date": "2028-06-22 13:30:00",
+            "numberOfPlaces": "32"
         }
     ]
 }

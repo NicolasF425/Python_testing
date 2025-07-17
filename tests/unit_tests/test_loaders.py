@@ -1,4 +1,4 @@
-from utilities import load_clubs, load_competitions
+from utilities import load_clubs, load_competitions, load_bookings
 
 
 def test_loadClubs():
@@ -41,10 +41,23 @@ def test_loadCompetitions():
         {
             "name": "Open Classic",
             "date": "2030-06-22 13:30:00",
-            "numberOfPlaces": "20"
+            "numberOfPlaces": "11"
+        },
+        {
+            "name": "Summer Games",
+            "date": "2028-06-22 13:30:00",
+            "numberOfPlaces": "32"
         }
     ]
 
     loaded_competitions = load_competitions()
 
     assert competitions == loaded_competitions
+
+
+def test_loadBookings():
+    bookings = []
+
+    loaded_bookings = load_bookings()
+
+    assert bookings == loaded_bookings

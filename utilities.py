@@ -14,6 +14,20 @@ def load_competitions():
         return listOfCompetitions
 
 
+def load_bookings():
+    with open('bookings.json') as books:
+        listOfBookings = json.load(books)['bookings']
+        return listOfBookings
+
+
+def check_booking_exist(club_name, competition_name, bookings):
+    if bookings != []:
+        for booking in bookings:
+            if club_name == booking['club'] and competition_name == booking['competition']:
+                return True
+    return False
+
+
 def check_mail_exist(mail):
     clubs = load_clubs()
     for club in clubs:

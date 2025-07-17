@@ -1,5 +1,5 @@
 import pytest
-from server import app, clubs, competitions
+from server import app, clubs, competitions, bookings
 
 
 @pytest.fixture
@@ -43,6 +43,8 @@ def test_integration(client):
     # Vérificaion des modifications
     updated_club = [c for c in clubs if c['name'] == club_name][0]
     updated_competition = [c for c in competitions if c['name'] == competition_name][0]
+    places_reserved = bookings[0]['places']
 
     assert int(updated_club['points']) == initial_points - placesToReserve
     assert int(updated_competition['numberOfPlaces']) == initial_places - placesToReserve
+    assert int(places_reserved) == placesToReserve
